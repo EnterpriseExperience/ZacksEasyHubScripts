@@ -425,14 +425,133 @@ lib.disconnect = function(name)
 	end
 end
 
+if setmetatable then
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "Checked!",
+        Text = "Exploit supports 'setmetatable'",
+        Icon = "rbxassetid://1"
+    })
+else
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "Failed!",
+        Text = "missing | (setmetatable)",
+        Icon = "rbxassetid://1"
+    })
+end
+
+if getmetatable then
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "Checked!",
+        Text = "Exploit supports 'getmetatable'",
+        Icon = "rbxassetid://1"
+    })
+else
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "Failed!",
+        Text = "missing | (getmetatable)",
+        Icon = "rbxassetid://1"
+    })
+end
+
+if setmetatable and getmetatable then
+    local Services = setmetatable({}, {__index = function(Self, Index)
+        local NewService = game.GetService(game, Index)
+            if NewService then
+                Self[Index] = NewService
+            end
+        return NewService
+    end})
+else
+    warn("Cannot continue 'Services' worker, missing (setmetatable) (getmetatable)")
+    wait(.5)
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "Failed!",
+        Text = "missing both 'set' and 'get'",
+        Icon = "rbxassetid://1"
+    })
+end
+
+if setmetatable and getmetatable and cloneref then
+    local Services = setmetatable({}, {__index = function(Self, Index)
+        local NewService = game.GetService(game, Index)
+            if NewService then
+                Self[Index] = NewService
+            end
+        return NewService
+    end})
+
+    local DataModelGame = game
+    local PlaceID = game.PlaceId
+    local RunService = Services.RunService or cloneref(DataModelGame:GetService("RunService")) or DataModelGame:GetService("RunService")
+    local TweenService = Services.TweenService or cloneref(DataModelGame:GetService("TweenService")) or DataModelGame:GetService("TweenService")
+    local Players = Services.Players or cloneref(DataModelGame:GetService("Players")) or DataModelGame:GetService("Players")
+    local Workspace = Services.Workspace or cloneref(DataModelGame:GetService("Workspace")) or DataModelGame:GetService("Workspace")
+    local Lighting = Services.Lighting or cloneref(DataModelGame:GetService("Lighting")) or DataModelGame:GetService("Lighting")
+    local UserInputService = Services.UserInputService or cloneref(game:GetService("UserInputService")) or game:GetService("UserInputService")
+    local TeleportService = Services.TeleportService or cloneref(game:GetService("TeleportService")) or game:GetService("TeleportService")
+    local ReplicatedStorage = Services.ReplicatedStorage or cloneref(game:GetService("ReplicatedStorage")) or game:GetService("ReplicatedStorage")
+    local ReplicatedFirst = Services.ReplicatedFirst or cloneref(game:GetService("ReplicatedFirst")) or game:GetService("ReplicatedFirst")
+    local camera = Workspace:FindFirstChild("Camera")
+    local StarterPack = cloneref(game:GetService("StarterPack")) or game:GetService("StarterPack")
+    local NewInstance = Instance
+    local LocalPlayer = Players.LocalPlayer
+    local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+    local Human = Character:FindFirstChildWhichIsA("Humanoid") or Character:FindFirstChildOfClass("Humanoid")
+    local HumanoidRP = Character:FindFirstChild("HumanoidRootPart") or Character:WaitForChild("HumanoidRootPart")
+    local Orion = game:GetService("CoreGui"):FindFirstChild("Orion") or game:GetService("CoreGui"):WaitForChild("Orion", 2) or nil
+elseif cloneref then
+    local DataModelGame = game
+    local PlaceID = game.PlaceId
+    local RunService = cloneref(DataModelGame:GetService("RunService")) or DataModelGame:GetService("RunService")
+    local TweenService = cloneref(DataModelGame:GetService("TweenService")) or DataModelGame:GetService("TweenService")
+    local Players = cloneref(DataModelGame:GetService("Players")) or DataModelGame:GetService("Players")
+    local Workspace = cloneref(DataModelGame:GetService("Workspace")) or DataModelGame:GetService("Workspace")
+    local Lighting = cloneref(DataModelGame:GetService("Lighting")) or DataModelGame:GetService("Lighting")
+    local UserInputService = cloneref(game:GetService("UserInputService")) or game:GetService("UserInputService")
+    local TeleportService = cloneref(game:GetService("TeleportService")) or game:GetService("TeleportService")
+    local ReplicatedStorage = cloneref(game:GetService("ReplicatedStorage")) or game:GetService("ReplicatedStorage")
+    local ReplicatedFirst = cloneref(game:GetService("ReplicatedFirst")) or game:GetService("ReplicatedFirst")
+    local camera = Workspace:FindFirstChild("Camera") or game:GetService("Workspace"):FindFirstChild("Camera")
+    local StarterPack = cloneref(game:GetService("StarterPack")) or game:GetService("StarterPack")
+    local NewInstance = Instance
+    local LocalPlayer = Players.LocalPlayer
+    local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+    local Human = Character:FindFirstChildWhichIsA("Humanoid") or Character:FindFirstChildOfClass("Humanoid") or Character:WaitForChild("Humanoid", 3)
+    local HumanoidRP = Character:FindFirstChild("HumanoidRootPart") or Character:WaitForChild("HumanoidRootPart", 5)
+    local Orion = game:GetService("CoreGui"):FindFirstChild("Orion") or game:GetService("CoreGui"):WaitForChild("Orion", 2) or nil
+elseif not cloneref and not setmetatable and not getmetatable then
+    local DataModelGame = game
+    local PlaceID = game.PlaceId
+    local RunService = DataModelGame:GetService("RunService")
+    local TweenService = DataModelGame:GetService("TweenService")
+    local Players = DataModelGame:GetService("Players")
+    local Workspace = DataModelGame:GetService("Workspace")
+    local Lighting = DataModelGame:GetService("Lighting")
+    local UserInputService = game:GetService("UserInputService")
+    local TeleportService = game:GetService("TeleportService")
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local ReplicatedFirst = game:GetService("ReplicatedFirst")
+    local camera = Workspace:FindFirstChild("Camera")
+    local StarterPack = game:GetService("StarterPack")
+    local NewInstance = Instance
+    local LocalPlayer = Players.LocalPlayer
+    local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+    local Human = Character:FindFirstChildWhichIsA("Humanoid") or Character:FindFirstChildOfClass("Humanoid")
+    local HumanoidRP = Character:FindFirstChild("HumanoidRootPart") or Character:WaitForChild("HumanoidRootPart")
+    local Orion = game:GetService("CoreGui"):FindFirstChild("Orion") or game:GetService("CoreGui"):WaitForChild("Orion", 2) or nil
+end
+
 local DataModelGame = game
 local PlaceID = game.PlaceId
-local RunService = cloneref(DataModelGame:GetService("RunService")) or DataModelGame:GetService("RunService")
-local TweenService = cloneref(DataModelGame:GetService("TweenService")) or DataModelGame:GetService("TweenService")
-local Players = cloneref(DataModelGame:GetService("Players")) or DataModelGame:GetService("Players")
-local Workspace = cloneref(DataModelGame:GetService("Workspace")) or DataModelGame:GetService("Workspace")
-local Lighting = cloneref(DataModelGame:GetService("Lighting")) or DataModelGame:GetService("Lighting")
-local UserInputService = cloneref(game:GetService("UserInputService")) or game:GetService("UserInputService")
+local RunService = Services.RunService or cloneref(DataModelGame:GetService("RunService")) or DataModelGame:GetService("RunService")
+local TweenService = Services.TweenService or cloneref(DataModelGame:GetService("TweenService")) or DataModelGame:GetService("TweenService")
+local Players = Services.Players or cloneref(DataModelGame:GetService("Players")) or DataModelGame:GetService("Players")
+local Workspace = Services.Workspace or cloneref(DataModelGame:GetService("Workspace")) or DataModelGame:GetService("Workspace")
+local Lighting = Services.Lighting or cloneref(DataModelGame:GetService("Lighting")) or DataModelGame:GetService("Lighting")
+local UserInputService = Services.UserInputService or cloneref(game:GetService("UserInputService")) or game:GetService("UserInputService")
+local TeleportService = Services.TeleportService or cloneref(game:GetService("TeleportService")) or game:GetService("TeleportService")
+local ReplicatedStorage = Services.ReplicatedStorage or cloneref(game:GetService("ReplicatedStorage")) or game:GetService("ReplicatedStorage")
+local ReplicatedFirst = Services.ReplicatedFirst or cloneref(game:GetService("ReplicatedFirst")) or game:GetService("ReplicatedFirst")
 local camera = Workspace:FindFirstChild("Camera")
 local StarterPack = cloneref(game:GetService("StarterPack")) or game:GetService("StarterPack")
 local NewInstance = Instance
@@ -1019,7 +1138,7 @@ PressurePage:AddButton({
 end})
 
 BloxFruitsPage:AddButton({
-    Name = "Blox Fruits OP God Hub",
+    Name = "Blox Fruits OP God Hub (Key)",
     Callback = function()
     local PlaceIDNum = 2753915549
     local PlaceIDName = game:GetService("MarketplaceService"):GetProductInfo(PlaceIDNum).Name
@@ -1125,6 +1244,102 @@ ClimbRaceSimPage:AddButton({
     local PlaceIDName = game:GetService("MarketplaceService"):GetProductInfo(PlaceIDNum).Name
     if PlaceID == PlaceIDNum then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/EnterpriseExperience/PublicScriptsOnRobloxExploiting/main/ClimbRaceSim.lua",true))()
+    else
+        LogValue.Value = LogValue.Value + 1
+        Library:MakeNotification({
+            Name = "Correct Game Name:",
+            Content = tostring(PlaceIDName),
+            Image = "rbxassetid://4483345998",
+            Time = 10
+        })
+        return Library:MakeNotification({
+            Name = "Error:",
+            Content = "Not on the correct game | ["..tostring(PlaceIDNum).."]",
+            Image = "rbxassetid://4483345998",
+            Time = 10
+        })
+    end
+end})
+
+PrisonLifePage:AddButton({
+    Name = "Prison Life PRISONWARE_v1.3",
+    Callback = function()
+    local PlaceIDNum = 155615604
+    local PlaceIDName = game:GetService("MarketplaceService"):GetProductInfo(PlaceIDNum).Name
+    if PlaceID == PlaceIDNum then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Denverrz/scripts/master/PRISONWARE_v1.3.txt"))();
+    else
+        LogValue.Value = LogValue.Value + 1
+        Library:MakeNotification({
+            Name = "Correct Game Name:",
+            Content = tostring(PlaceIDName),
+            Image = "rbxassetid://4483345998",
+            Time = 10
+        })
+        return Library:MakeNotification({
+            Name = "Error:",
+            Content = "Not on the correct game | ["..tostring(PlaceIDNum).."]",
+            Image = "rbxassetid://4483345998",
+            Time = 10
+        })
+    end
+end})
+
+PrisonLifePage:AddButton({
+    Name = "Prison Life Silent Aim (Confinement X)",
+    Callback = function()
+    local PlaceIDNum = 155615604
+    local PlaceIDName = game:GetService("MarketplaceService"):GetProductInfo(PlaceIDNum).Name
+    if PlaceID == PlaceIDNum then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EnterpriseExperience/PublicScriptsOnRobloxExploiting/main/PrisonLifeScript.lua"))();
+    else
+        LogValue.Value = LogValue.Value + 1
+        Library:MakeNotification({
+            Name = "Correct Game Name:",
+            Content = tostring(PlaceIDName),
+            Image = "rbxassetid://4483345998",
+            Time = 10
+        })
+        return Library:MakeNotification({
+            Name = "Error:",
+            Content = "Not on the correct game | ["..tostring(PlaceIDNum).."]",
+            Image = "rbxassetid://4483345998",
+            Time = 10
+        })
+    end
+end})
+
+PrisonLifePage:AddButton({
+    Name = "Prison Life Prevail X",
+    Callback = function()
+    local PlaceIDNum = 155615604
+    local PlaceIDName = game:GetService("MarketplaceService"):GetProductInfo(PlaceIDNum).Name
+    if PlaceID == PlaceIDNum then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EnterpriseExperience/PublicScriptsOnRobloxExploiting/main/PrevailXSourcePrisonLife.lua"))();
+    else
+        LogValue.Value = LogValue.Value + 1
+        Library:MakeNotification({
+            Name = "Correct Game Name:",
+            Content = tostring(PlaceIDName),
+            Image = "rbxassetid://4483345998",
+            Time = 10
+        })
+        return Library:MakeNotification({
+            Name = "Error:",
+            Content = "Not on the correct game | ["..tostring(PlaceIDNum).."]",
+            Image = "rbxassetid://4483345998",
+            Time = 10
+        })
+    end
+end})
+
+PrisonLifePage:AddButton({
+    Name = "Prison Life Admin (No Annoying Chat)",
+    Callback = function()
+    local PlaceIDNum = 155615604
+    local PlaceIDName = game:GetService("MarketplaceService"):GetProductInfo(PlaceIDNum).Name
+    if PlaceID == PlaceIDNum then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EnterpriseExperience/PublicScriptsOnRobloxExploiting/main/PrisonLifeAdminScriptNoAnnoyingChat.lua"))();
     else
         LogValue.Value = LogValue.Value + 1
         Library:MakeNotification({
