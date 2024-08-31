@@ -13,9 +13,50 @@ else
     end
 end
 
+if not writefile then
+    warn("Missing | 'writefile'")
+else
+    print("'writefile' | true")
+end
+
+if not readfile then
+    warn("Missing | 'readfile'")
+else
+    print("'readfile' | true")
+end
+
+if not getconnections then
+    warn("Missing | 'getconnections'")
+else
+    print("'getconnections' | true")
+end
+
+if not setclipboard then
+    warn("Missing | 'setclipboard'")
+else
+    print("'setclipboard' | true")
+end
+
+if not cloneref then
+    warn("Missing | 'cloneref'")
+else
+    print("'cloneref' | true")
+end
+
+if not setmetatable then
+    warn("Missing | 'setmetatable'")
+else
+    print("'setmetatable' | true")
+end
+
+if not getmetatable then
+    warn("Missing | 'getmetatable'")
+else
+    print("'getmetatable' | true")
+end
+
 local Library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Sources = Library:MakeWindow({Name = "Zacks Easy Hub | Scripts | GameID: "..game.PlaceId, IntroText = "Welcome To The Hub, "..game:GetService("Players").LocalPlayer.Name, HidePremium = false, SaveConfig = false, ConfigFolder = "SCRIPTHUB_ZACKSEASYHUB"})
--- https://discord.com/invite/streetzwar2 (Key To --> Sleepy Hub (Streetz War)
 
 local Home = Sources:MakeTab({
 	Name = "My Scripts",
@@ -1340,6 +1381,30 @@ PrisonLifePage:AddButton({
     local PlaceIDName = game:GetService("MarketplaceService"):GetProductInfo(PlaceIDNum).Name
     if PlaceID == PlaceIDNum then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/EnterpriseExperience/PublicScriptsOnRobloxExploiting/main/PrisonLifeAdminScriptNoAnnoyingChat.lua"))();
+    else
+        LogValue.Value = LogValue.Value + 1
+        Library:MakeNotification({
+            Name = "Correct Game Name:",
+            Content = tostring(PlaceIDName),
+            Image = "rbxassetid://4483345998",
+            Time = 10
+        })
+        return Library:MakeNotification({
+            Name = "Error:",
+            Content = "Not on the correct game | ["..tostring(PlaceIDNum).."]",
+            Image = "rbxassetid://4483345998",
+            Time = 10
+        })
+    end
+end})
+
+PrisonLifePage:AddButton({
+    Name = "Prison Life x-Rawnder",
+    Callback = function()
+    local PlaceIDNum = 155615604
+    local PlaceIDName = game:GetService("MarketplaceService"):GetProductInfo(PlaceIDNum).Name
+    if PlaceID == PlaceIDNum then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/xRawnder/main/x-Rawnder/(1)"))();
     else
         LogValue.Value = LogValue.Value + 1
         Library:MakeNotification({
