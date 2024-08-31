@@ -582,6 +582,14 @@ elseif not cloneref and not setmetatable and not getmetatable then
     local Orion = game:GetService("CoreGui"):FindFirstChild("Orion") or game:GetService("CoreGui"):WaitForChild("Orion", 2) or nil
 end
 
+local Services = setmetatable({}, {__index = function(Self, Index)
+    local NewService = game.GetService(game, Index)
+        if NewService then
+            Self[Index] = NewService
+        end
+    return NewService
+end})
+
 local DataModelGame = game
 local PlaceID = game.PlaceId
 local RunService = Services.RunService or cloneref(DataModelGame:GetService("RunService")) or DataModelGame:GetService("RunService")
