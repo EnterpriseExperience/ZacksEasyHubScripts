@@ -1399,6 +1399,173 @@ if setmetatable and getmetatable and cloneref then
         end
     end})
     
+    PrisonLifePage:AddButton({
+        Name = "Prison Life Instant Crash Server",
+        Callback = function()
+        local Gun1 = workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP
+        wait()
+        game:GetService("Players").LocalPlayer.Character:PivotTo(Gun1:GetPivot())
+        wait(0.4)
+        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
+        wait()
+        local Gun2 = workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP
+        wait()
+        game:GetService("Players").LocalPlayer.Character:PivotTo(Gun2:GetPivot())
+        wait(0.4)
+        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+        wait()
+        local Gun3 = workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP
+        wait()
+        game:GetService("Players").LocalPlayer.Character:PivotTo(Gun3:GetPivot())
+        wait(0.4)
+        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
+        for i = 1, 150000 do
+            local Gun = game.Players.LocalPlayer.Backpack["Remington 870"] or game.Players.LocalPlayer.Character["Remington 870"]
+    
+            local args = {
+                [1] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [2] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [3] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [4] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [5] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [6] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [7] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [8] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }
+            }
+    
+            game:GetService("ReplicatedStorage").ShootEvent:FireServer(args, Gun)
+            wait()
+            local Gun = game.Players.LocalPlayer.Backpack["M9"] or game.Players.LocalPlayer.Character["M9"]
+    
+            local args = {
+                [1] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [2] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [3] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [4] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [5] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [6] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [7] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [8] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }
+            }
+    
+            game:GetService("ReplicatedStorage").ShootEvent:FireServer(args, Gun)
+            wait()
+            local Gun = game.Players.LocalPlayer.Backpack["AK-47"] or game.Players.LocalPlayer.Character["AK-47"]
+    
+            local args = {
+                [1] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [2] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [3] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [4] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [5] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [6] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [7] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }, [8] = {
+                    ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                    ["Distance"] = 0, 
+                    ["Cframe"] = CFrame.new(), 
+                    ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+                }
+            }
+    
+            game:GetService("ReplicatedStorage").ShootEvent:FireServer(args, Gun)
+        end
+    end})
+    
     CharacterTab:AddSlider({
         Name = "WalkSpeed (Default: 16)",
         Min = 16,
@@ -3365,7 +3532,9 @@ PrisonLifePage:AddButton({
     end
 end})
 
-PrisonLifePage:AddButton({
+-- Does not work without necessary functions in exploit AKA, 'getmetatable' and 'setmetatable' which exploits without it obviously do not have, e.g, Solara, FluxTeam, etc, (Usually level 3 executors, will be broken if uncommented, and should only be used on powerful executors.)
+
+--[[PrisonLifePage:AddButton({
     Name = "Prison Life Silent Aim (Confinement X)",
     Callback = function()
     local PlaceIDNum = 155615604
@@ -3387,7 +3556,7 @@ PrisonLifePage:AddButton({
             Time = 10
         })
     end
-end})
+end})--]]
 
 PrisonLifePage:AddButton({
     Name = "Prison Life Prevail X",
@@ -3458,6 +3627,173 @@ PrisonLifePage:AddButton({
             Image = "rbxassetid://4483345998",
             Time = 10
         })
+    end
+end})
+
+PrisonLifePage:AddButton({
+    Name = "Prison Life Instant Crash Server",
+    Callback = function()
+    local Gun1 = workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP
+    wait()
+    game:GetService("Players").LocalPlayer.Character:PivotTo(Gun1:GetPivot())
+    wait(0.4)
+    workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
+    wait()
+    local Gun2 = workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP
+    wait()
+    game:GetService("Players").LocalPlayer.Character:PivotTo(Gun2:GetPivot())
+    wait(0.4)
+    workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+    wait()
+    local Gun3 = workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP
+    wait()
+    game:GetService("Players").LocalPlayer.Character:PivotTo(Gun3:GetPivot())
+    wait(0.4)
+    workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
+    for i = 1, 150000 do
+        local Gun = game.Players.LocalPlayer.Backpack["Remington 870"] or game.Players.LocalPlayer.Character["Remington 870"]
+
+        local args = {
+            [1] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [2] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [3] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [4] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [5] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [6] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [7] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [8] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }
+        }
+
+        game:GetService("ReplicatedStorage").ShootEvent:FireServer(args, Gun)
+        wait()
+        local Gun = game.Players.LocalPlayer.Backpack["M9"] or game.Players.LocalPlayer.Character["M9"]
+
+        local args = {
+            [1] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [2] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [3] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [4] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [5] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [6] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [7] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [8] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }
+        }
+
+        game:GetService("ReplicatedStorage").ShootEvent:FireServer(args, Gun)
+        wait()
+        local Gun = game.Players.LocalPlayer.Backpack["AK-47"] or game.Players.LocalPlayer.Character["AK-47"]
+
+        local args = {
+            [1] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [2] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [3] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [4] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [5] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [6] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [7] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }, [8] = {
+                ["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+                ["Distance"] = 0, 
+                ["Cframe"] = CFrame.new(), 
+                ["Hit"] = workspace[game.Players.LocalPlayer.Name].Head
+            }
+        }
+
+        game:GetService("ReplicatedStorage").ShootEvent:FireServer(args, Gun)
     end
 end})
 
@@ -3652,7 +3988,7 @@ else
     end
 end})
 
--- This function below is broken and I am still working on pushing an update for it, but now i'm leaving this here, feel free to release a fix for it, if you want.
+-- This function below is broken and I am still working on pushing an update for it, but for now i'm leaving this here, feel free to release a fix for it, if you want.
 
 --[[local function monitorHealth()
     local Orion = game:GetService("CoreGui"):FindFirstChild("Orion")
@@ -3701,7 +4037,7 @@ monitorHealth()
 wait(.1)--]]
 Counter()
 wait()
-if getgenv().CountingTime == true then
+if getgenv().CountingTime then
     print("Success! | onConnected | true")
 else
     warn("Failed! | onDisconnected | false")
