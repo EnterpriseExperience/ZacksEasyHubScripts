@@ -876,25 +876,7 @@ if setmetatable and getmetatable and cloneref then
     ADustyTripPage:AddButton({
         Name = "A Dusty Trip",
         Callback = function()
-        local PlaceIDNum = 16389395869
-        local PlaceIDName = game:GetService("MarketplaceService"):GetProductInfo(PlaceIDNum).Name
-        if PlaceID == PlaceIDNum then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/artemy133563/Utilities/main/ADustyTrip",true))()
-        else
-            LogValue.Value = LogValue.Value + 1
-            Library:MakeNotification({
-                Name = "Correct Game Name:",
-                Content = tostring(PlaceIDName),
-                Image = "rbxassetid://4483345998",
-                Time = 10
-            })
-            return Library:MakeNotification({
-                Name = "Error:",
-                Content = "Not on the correct game | ["..tostring(PlaceIDNum).."]",
-                Image = "rbxassetid://4483345998",
-                Time = 10
-            })
-        end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/artemy133563/Utilities/main/ADustyTrip",true))()
     end})
     
     L3008Page:AddButton({
