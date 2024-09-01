@@ -1401,7 +1401,7 @@ if setmetatable and getmetatable and cloneref then
         game:GetService("Players").LocalPlayer.Character:PivotTo(Gun3:GetPivot())
         wait(0.4)
         workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
-        for i = 1, 150000 do
+        for i = 1, 750000 do
             local Gun = game.Players.LocalPlayer.Backpack["Remington 870"] or game.Players.LocalPlayer.Character["Remington 870"]
     
             local args = {
