@@ -2740,6 +2740,52 @@ elseif cloneref then
             })
         end
     end})
+
+    PrisonLifePage:AddButton({
+        Name = "Click Arrest",
+        Callback = function()
+        game:GetService("StarterGui"):SetCore("SendNotification",{
+            Title = "Click Arrest:",
+            Text = "Click Arrest Loaded!",
+            Icon = "rbxassetid://1"
+        })
+        wait()
+        local mouse = game.Players.LocalPlayer:GetMouse()
+        local arrestEvent = game.Workspace.Remote.arrest
+        mouse.Button1Down:connect(function()
+            local obj = mouse.Target
+            local response = arrestEvent:InvokeServer(obj)
+        end)
+    end})
+
+    PrisonLifePage:AddButton({
+        Name = "Inf Stamina",
+        Callback = function()
+        getregistry = getreg or debug.getregistry
+        setupvalue = debug.setupvalue or setupvalue or setupva
+        getupvalues = debug.getupvalues or getupvalues or getupvals
+            
+        local a,b = 0,0
+        for i,v in next, getregistry() do
+            if type(v) == 'function' then
+                a = a+1
+                    if a >= 120 then
+                        wait()
+                        a = 0
+                    end
+                    for i2, v2 in next, getupvalues(v) do
+                        b = b+1
+                        if b >= 120 then
+                        wait()
+                        b = 0
+                    end
+                    if i2 == 5 and typeof(v2) == "number" and tostring(v2) == string.split(v2,".")[1] then
+                        setupvalue(v,i2,12)
+                    end
+                end
+            end
+        end
+    end})
     
     CharacterTab:AddSlider({
         Name = "WalkSpeed (Default: 16)",
