@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/EnterpriseExperience/ZacksEasyHubScripts/main/script.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EnterpriseExperience/ZacksEasyHubScripts/main/source.lua"))()
